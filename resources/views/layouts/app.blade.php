@@ -20,16 +20,13 @@
 
     <div class="fixed inset-0 bg-black/55 backdrop-blur-sm z-[1035] hidden lg:hidden" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-    @include('partials.sidebar')
 
     <div class="flex flex-col min-h-screen transition-all duration-300 lg:ml-[270px]">
-        @include('partials.navbar')
 
         <main class="flex-1 p-4 md:p-7">
             @yield('content')
         </main>
 
-        @include('partials.footer')
     </div>
 
     <script>

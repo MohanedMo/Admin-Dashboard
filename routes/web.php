@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/properties', [DashboardController::class, 'properties'])->name('properties');
+Route::get('/properties/{id}', [DashboardController::class, 'propertyDetails'])->name('property.details');
