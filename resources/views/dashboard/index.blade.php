@@ -8,12 +8,7 @@
     {{-- Statistics Cards --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
         @foreach($stats as $stat)
-            <x-stat-card 
-                :type="$stat['type']" 
-                :icon="$stat['icon']" 
-                :value="$stat['value']" 
-                :label="$stat['label']" 
-            />
+            <x-stat-card :type="$stat['type']" :icon="$stat['icon']" :value="$stat['value']" :label="$stat['label']" />
         @endforeach
     </div>
 
@@ -52,9 +47,11 @@
                                 <span class="text-primary-light font-bold">${{ number_format($property['price']) }}</span>
                             </td>
                             <td>
+                                <x-badge :status="$property['status']" />
                             </td>
                             <td class="text-right">
-                                <a href="{{ route('property.details', $property['id']) }}" class="btn-outline-custom !py-1.5 !px-3 !text-[11.5px]">
+                                <a href="{{ route('property.details', $property['id']) }}"
+                                    class="btn-outline-custom !py-1.5 !px-3 !text-[11.5px]">
                                     <i class="bi bi-eye"></i> View
                                 </a>
                             </td>
