@@ -94,10 +94,30 @@ class DashboardController extends Controller
         $properties = $this->getProperties();
 
         $stats = [
-            'total_properties' => count($properties),
-            'total_clients' => 124,
-            'new_requests' => 18,
-            'total_sales' => 8970000,
+            [
+                'type' => 'properties',
+                'icon' => 'bi-buildings',
+                'value' => count($properties),
+                'label' => 'Total Properties',
+            ],
+            [
+                'type' => 'clients',
+                'icon' => 'bi-people',
+                'value' => 124,
+                'label' => 'Total Clients',
+            ],
+            [
+                'type' => 'requests',
+                'icon' => 'bi-envelope-paper',
+                'value' => 18,
+                'label' => 'New Requests',
+            ],
+            [
+                'type' => 'sales',
+                'icon' => 'bi-currency-dollar',
+                'value' => '$' . number_format(8970000 / 1000000, 1) . 'M',
+                'label' => 'Total Sales',
+            ],
         ];
 
         $recentProperties = collect($properties)

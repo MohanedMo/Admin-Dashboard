@@ -220,6 +220,127 @@
         color: var(--color-primary-light);
         font-weight: 500;
     }
+    
+    .stat-card {
+        @apply relative overflow-hidden;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 22px;
+        transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+    .stat-card::before {
+        content: '';
+        @apply absolute top-0 left-0 right-0;
+        height: 3px;
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(255,255,255,.1);
+    }
+    .stat-card .stat-icon {
+        @apply flex items-center justify-center;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    .stat-card .stat-value {
+        @apply font-extrabold leading-none;
+        font-size: 28px;
+        color: var(--color-text-primary);
+        margin-bottom: 6px;
+    }
+    .stat-card .stat-label {
+        @apply font-medium;
+        font-size: 13px;
+        color: var(--color-text-muted);
+    }
+    .stat-card .stat-change {
+        @apply inline-flex items-center gap-1 font-semibold;
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+    .stat-card.properties::before { background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light)); }
+    .stat-card.properties .stat-icon { background: var(--color-primary-bg); color: var(--color-primary); }
+    .stat-card.clients::before { background: linear-gradient(90deg, var(--color-secondary), #38bdf8); }
+    .stat-card.clients .stat-icon { background: rgba(14,165,233,.1); color: var(--color-secondary); }
+    .stat-card.requests::before { background: linear-gradient(90deg, var(--color-warning), #fbbf24); }
+    .stat-card.requests .stat-icon { background: rgba(245,158,11,.1); color: var(--color-warning); }
+    .stat-card.sales::before { background: linear-gradient(90deg, var(--color-success), #34d399); }
+    .stat-card.sales .stat-icon { background: rgba(16,185,129,.1); color: var(--color-success); }
+
+    .dash-card {
+        @apply overflow-hidden;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+    }
+    .dash-card .card-header {
+        @apply flex items-center justify-between bg-transparent;
+        padding: 18px 22px;
+        border-bottom: 1px solid var(--color-border);
+    }
+    .dash-card .card-header h6 {
+        @apply m-0 font-bold;
+        font-size: 15px;
+        color: var(--color-text-primary);
+    }
+    .dash-card .card-body {
+        @apply p-0;
+    }
+
+    .custom-table {
+        @apply w-full border-collapse;
+    }
+    .custom-table thead th {
+        @apply uppercase font-semibold whitespace-nowrap text-left;
+        padding: 12px 20px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--color-text-muted);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .custom-table tbody td {
+        @apply align-middle;
+        padding: 14px 20px;
+        font-size: 13.5px;
+        color: var(--color-text-secondary);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .custom-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+    .custom-table tbody tr {
+        transition: background .2s ease;
+    }
+    .custom-table tbody tr:hover {
+        background: rgba(255,255,255,.02);
+    }
+    .custom-table .prop-info {
+        @apply flex items-center gap-3;
+    }
+    .custom-table .prop-thumb {
+        @apply shrink-0 object-cover;
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+    }
+    .custom-table .prop-name {
+        @apply font-semibold;
+        color: var(--color-text-primary);
+        font-size: 13.5px;
+    }
+    .custom-table .prop-location {
+        font-size: 12px;
+        color: var(--color-text-muted);
+    }
+
 }
 
 @media (max-width: 991.98px) {
