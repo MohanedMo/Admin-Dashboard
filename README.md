@@ -1,59 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Real Estate Admin Dashboard
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, highly responsive, and premium Admin Dashboard built for managing real estate properties. It features a sleek glassmorphism aesthetic, a dynamic theme configuration, and smooth micro-animations.
 
-## About Laravel
+## 🚀 Technologies Used
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Backend Framework**: [Laravel](https://laravel.com/) (Blade Templating)
+- **Frontend Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **CSS Architecture**: Custom CSS variables integrated directly with Tailwind (`@theme`) for a centralized design system.
+- **Icons**: Bootstrap Icons
+- **Interactivity**: Vanilla JavaScript
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Features & Implementation Phases
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The project was implemented in incremental phases, focusing on UI/UX excellence and responsive design.
 
-## Learning Laravel
+### Phase 1: Foundation & Theme Architecture
+- Configured Tailwind CSS and defined custom `@theme` CSS variables in `app.css` to manage global colors, typography, and spacing.
+- Implemented the base layout including a responsive Sidebar with sub-navigation and an off-canvas mobile view.
+- Built a sticky Top Navbar with a glassmorphism effect and backdrop blurring.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Phase 2: Dashboard Overview & Statistics
+- Created reusable Blade components for dynamic UI elements (e.g., `<x-stat-card>`, `<x-badge>`).
+- Developed a dynamic statistics grid mapping data types to tailored gradient backgrounds and icons.
+- Built a "Recent Properties" table with hover effects, thumbnail integration, and responsive horizontal scrolling.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Phase 3: Property Listings Grid
+- Implemented a full properties gallery page with a responsive grid layout.
+- Added a search bar and status filter buttons with active state highlighting.
+- Created premium property cards with:
+  - Image scaling on hover.
+  - Glassmorphism badge overlays displaying property status and type.
+  - Price formatting and "View Details" call-to-action buttons.
 
-## Laravel Sponsors
+### Phase 4: Property Details & Gallery
+- Developed a detailed view for individual properties.
+- Implemented a dynamic image gallery with a main hero image and clickable thumbnail navigation using Vanilla JavaScript.
+- Styled a "Quick Info" sidebar displaying property IDs, types, and status with border subtleties.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Phase 5: UI/UX Refinement
+- Enhanced visual feedback with CSS micro-animations (`animate-in` fade-ups).
+- Applied consistent border-radius (`var(--radius-sm/md/lg)`) and shadow variables for a cohesive design language.
+- Refactored UI logic to maintain clean Blade templates while keeping complex styling within Tailwind utilities and centralized CSS rules.
 
-### Premium Partners
+## 🛠️ Installation & Setup
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. Clone the repository:
+```bash
+git clone <repository-url>
+```
+2. Navigate to the project directory:
+```bash
+cd Admin-Dashboard
+```
+3. Install PHP dependencies:
+```bash
+composer install
+```
+4. Install NPM dependencies and compile assets:
+```bash
+npm install
+npm run dev
+```
+5. Set up your environment file:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+6. Run the local development server:
+```bash
+php artisan serve
+```
 
-## Contributing
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📄 License
+This project is licensed under the MIT License.
